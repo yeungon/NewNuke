@@ -39,24 +39,55 @@ class Router
 
 	}
 	
-	private function addRoute($url, $action)
+	private function addRoute($method, $url, $action)
 	{
-		$this->routers[] = [$url, $action];
+		$this->routers[] = [$method, $url, $action];
 	}
 
 	public function get($url, $action)
 	{
-		$this->addRoute($url, $action);
+		$this->addRoute('GET', $url, $action);
 	}
 
 	public function post($url, $action)
 	{
-		$this->addRoute($url, $action);	
+		$this->addRoute('POST', $url, $action);	
 	}
 
 	public function any($url, $action)
 	{
-		$this->addRoute($url, $action);
+		$this->addRoute('GET|POST', $url, $action);
+
+	}
+
+	public function map()
+	{
+		$requestURL = $this->getRequestURL();
+		
+		$requestMethod = $this->getRequestMethod();
+		$routers = $this->routers;
+
+		foreach ($routers as $route) {
+			
+			list($method, $url, $action) = $route;
+
+
+			if(strpos($method, $requestMethod) !== FALSE)
+			{
+				if(strcmp(strtolower($url), strtolower($requestURL)) === 0){
+					if(is_callable($action)){
+						$action();
+						return;
+					}
+				}else{ continue;
+				}	
+
+			}else{
+				
+				continue;
+			}
+		}
+		return null;
 	}
 
 	public function run()
