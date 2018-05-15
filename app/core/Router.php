@@ -96,11 +96,13 @@ class Router
 
 		//echo $url;
 
-		$method = $this->getRequestMethod();
-		echo $method;
+		//$method = $this->getRequestMethod();
+		/*echo $method;
 
 		echo "<pre>";
-		print_r($this->routers);
+		print_r($this->routers);*/
+
+		$this->map();
 	}
 }
 
