@@ -20,7 +20,7 @@ class Router
 		$url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI']: '/';
 				
 		/*remove the initial part of the url*/
-		$url = str_replace('/vietphp/public/', '', $url);
+		$url = str_replace('/vietphp/public', '', $url);
 
 		/** check the url 
 		* if empty => return '/' ORTHERWISE, RETURN $url
