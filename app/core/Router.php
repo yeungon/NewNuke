@@ -4,7 +4,12 @@
 */
 class Router
 {
+	/**
+	* Array contains the routes
+	* @var array
+	*/
 	private $routers = [];
+
 	function __construct()
 	{
 		# code...
