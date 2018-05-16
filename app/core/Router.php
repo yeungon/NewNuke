@@ -68,17 +68,17 @@ class Router
 
 	}
 
-	public function map()
+	public function match()
 	{
-		$checkRoute = false;
+			$checkRoute = false;
 			$params 	= [];
 
 			$requestURL = $this->getRequestURL();
 			$requestMethod = $this->getRequestMethod();
-			$routers = self::$routers;
+			$routers = $this->routers;
 			
 			foreach( $routers as $route ){
-				list($method,$url,$action) = $route;
+				[$method,$url,$action] = $route;
 
 				if( strpos($method, $requestMethod) === FALSE ){
 					continue;
