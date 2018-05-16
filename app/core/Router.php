@@ -70,33 +70,61 @@ class Router
 
 	public function map()
 	{
-		$requestURL = $this->getRequestURL();
-		
-		$requestMethod = $this->getRequestMethod();
-		$routers = $this->routers;
+		$checkRoute = false;
+			$params 	= [];
 
-		foreach ($routers as $route) {
+			$requestURL = $this->getRequestURL();
+			$requestMethod = $this->getRequestMethod();
+			$routers = self::$routers;
 			
-			list($method, $url, $action) = $route;
+			foreach( $routers as $route ){
+				list($method,$url,$action) = $route;
 
+				if( strpos($method, $requestMethod) === FALSE ){
+					continue;
+				}
 
-			if(strpos($method, $requestMethod) !== FALSE)
-			{
-				if(strcmp(strtolower($url), strtolower($requestURL)) === 0){
-					if(is_callable($action)){
-						$action();
-						return;
+				if( $url === '*' ){
+					$checkRoute = true;
+				}elseif( strpos($url, '{') === FALSE ){
+					if( strcmp(strtolower($url), strtolower($requestURL)) === 0 ){
+						$checkRoute = true;
+					}else{
+						continue;
 					}
-				}else{ continue;
-				}	
+				}elseif( strpos($url, '}') === FALSE ){
+					continue;
+				}else{
+					$routeParams 	= explode('/', $url);
+					$requestParams 	= explode('/', $requestURL);
 
-			}else{
-				
-				continue;
+					if( count($routeParams) !== count($requestParams) ){
+						continue;
+					}
+
+					foreach( $routeParams as $k => $rp ){
+						if( preg_match('/^{\w+}$/',$rp) ){
+							$params[] = $requestParams[$k];
+						}
+					}
+					
+					$checkRoute = true;
+				}
+
+				if( $checkRoute === true ){
+					if( is_callable($action) ){
+						call_user_func_array($action, $params);
+					}
+					elseif( is_string($action) ){
+						$this->compieRoute($action,$params);
+					}
+					return;
+				}else{
+					continue;
+				}
 			}
+			return;
 		}
-		return null;
-	}
 
 	public function run()
 	{
