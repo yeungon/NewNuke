@@ -138,7 +138,7 @@ class Router
 		echo "<pre>";
 		print_r($this->routers);*/
 
-		$this->map();
+		$this->match();
 	}
 }
 
