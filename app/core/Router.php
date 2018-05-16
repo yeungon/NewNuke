@@ -36,7 +36,10 @@ class Router
 		return $url;
 
 	}
-
+	/**
+	*@param void
+	*@return REQUEST_METHOD provided by global magic CONSTANT $_REQUEST
+	*/
 	private function getRequestMethod()
 	{
 		$method = $url = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD']: 'GET';
