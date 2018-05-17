@@ -30,7 +30,7 @@ class App
 		/*sẽ được khởi tạo từ trong Router.php*/
 		//new \app\controllers\HomeController;
 
-		$this->router = new Router\Router;
+		$this->router = new \app\core\Router\Router;
 		
 		$this->router->get('/{abc}/{cde}', 'HomeController@index');
 
