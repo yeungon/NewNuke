@@ -1,0 +1,22 @@
+RewriteEngine On
+
+#Dont refer to specific file
+RewriteCond %{REQUEST_FILENAME} !-f
+
+#Dont refer to specific directory
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+#Automatically assign the index.php into the called URL #WITHOUT displaying index.php
+
+RewriteRule ^ index.php [L,QSA]
+
+
+
+
+
+
+
+
+
+

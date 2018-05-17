@@ -2,6 +2,9 @@
 /**
 * Router
 */
+declare(strict_types=1);
+namespace Router;
+
 class Router
 {
 	/**
@@ -36,6 +39,7 @@ class Router
 		return $url;
 
 	}
+	
 	/**
 	*@param void
 	*@return REQUEST_METHOD provided by global magic CONSTANT $_REQUEST
@@ -125,6 +129,40 @@ class Router
 			}
 			return;
 		}
+	
+	private function compieRoute($action, $params){
+
+		/*split the string HomeController@index*/
+		if(count(explode("@", $action)) !== 2){
+
+			die("There are some error when configuring router");
+		}
+
+		$className = explode('@', $action)[0];
+		$methodName = explode('@', $action)[1];
+		$classnamespace = 'app\\controllers\\'.$className; 
+
+		if (class_exists($classnamespace)) {
+			/**then class exists, then create a new object*/
+
+			$object = new $classnamespace;
+
+			if (method_exists($classnamespace, $methodName)){
+				/*call the method using the $params*/
+				call_user_func_array([$object, $methodName], $params);
+			}else{
+
+				die("Method $methodName not found");
+			}
+
+			
+		}else{
+
+			die("Class $classnamespace not found");
+		}
+
+
+	}
 
 	public function run()
 	{

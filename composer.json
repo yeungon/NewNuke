@@ -1,0 +1,20 @@
+{
+    "name": "vuong/vietphp",
+    "description": "\"a tiny PHP framework\"",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vuong Nguyen",
+            "email": "me@vuongnguyen.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "app\\core\\VietPhp\\": "app/core",
+            "Router\\": "app/core"
+        }
+    }
+}
