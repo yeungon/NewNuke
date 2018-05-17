@@ -116,15 +116,14 @@ class Router
 					$checkRoute = true;
 				}
 
-				if( $checkRoute === true ){
-					if( is_callable($action) ){
+				if ($checkRoute === true ){
+					if (is_callable($action) ){
 						call_user_func_array($action, $params);
-					}
-					elseif( is_string($action) ){
+					} elseif ( is_string($action) ){
 						$this->compieRoute($action,$params);
 					}
 					return;
-				}else{
+				} else {
 					continue;
 				}
 			}
