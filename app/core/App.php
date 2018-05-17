@@ -19,6 +19,8 @@ class App
 {
 	private $router;
 
+	public static $config;
+
 	function __construct()
 	{
 		/**
