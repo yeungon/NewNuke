@@ -9,7 +9,8 @@ namespace app\core\VietPhp;
 require_once(__DIR__.'/../controllers/HomeController.php');
 
 
-use Router;
+use app\core\Router;
+use app\controllers;
 /**
 * App 
 * The core system
