@@ -24,11 +24,13 @@ class Router
 	*/
 	private function getRequestURL()
 	{
-		
+		/**/
+		$basePath = \app\core\VietPhp\App::getConfig()['basePath'];
+
 		$url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI']: '/';
 				
 		/*remove the initial part of the url*/
-		$url = str_replace('/vietphp/public', '', $url);
+		$url = str_replace($basePath, '', $url);
 
 		/** check the url 
 		* if empty => return '/' ORTHERWISE, RETURN $url
