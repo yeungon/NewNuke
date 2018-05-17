@@ -83,33 +83,32 @@ class Router
 			$requestMethod = $this->getRequestMethod();
 			$routers = $this->routers;
 			
-			foreach( $routers as $route ){
+			foreach ($routers as $route ){
 				[$method,$url,$action] = $route;
 
-				if( strpos($method, $requestMethod) === FALSE ){
+				if (strpos($method, $requestMethod) === FALSE ){
 					continue;
 				}
 
-				if( $url === '*' ){
+				if ( $url === '*' ){
 					$checkRoute = true;
-				}elseif( strpos($url, '{') === FALSE ){
-					if( strcmp(strtolower($url), strtolower($requestURL)) === 0 ){
+				} elseif (strpos($url, '{') === FALSE ){
+					if (strcmp(strtolower($url), strtolower($requestURL)) === 0 ){
 						$checkRoute = true;
-					}else{
+					} else {
 						continue;
 					}
-				}elseif( strpos($url, '}') === FALSE ){
+				} elseif (strpos($url, '}') === FALSE ){
 					continue;
-				}else{
-					$routeParams 	= explode('/', $url);
-					$requestParams 	= explode('/', $requestURL);
-
-					if( count($routeParams) !== count($requestParams) ){
+				} else {
+						$routeParams 	= explode('/', $url);
+						$requestParams 	= explode('/', $requestURL);
+						if (count($routeParams) !== count($requestParams) ){
 						continue;
 					}
 
-					foreach( $routeParams as $k => $rp ){
-						if( preg_match('/^{\w+}$/',$rp) ){
+					foreach ($routeParams as $k => $rp ){
+						if (preg_match('/^{\w+}$/',$rp) ){
 							$params[] = $requestParams[$k];
 						}
 					}
