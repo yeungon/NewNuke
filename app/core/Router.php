@@ -3,7 +3,7 @@
 * Router
 */
 declare(strict_types=1);
-namespace Router;
+namespace app\core\Router;
 
 class Router
 {
