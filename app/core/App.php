@@ -72,8 +72,24 @@ class App
 			echo "400 not found";
 		});
 
-
 	}
+
+	/**
+	* Set and get config
+	* Both proptery and method are static, access by self:: or static:: or className::
+	* @param $config 
+	* @return configuration retrieved from config/main.php 
+	*/
+	public static function setConfig($config)
+	{
+		self::$config = $config;
+	}
+
+	public static function getConfig()
+	{
+		return self::$config;
+	}
+
 	public function run()
 	{
 		//hàm run() của Router.php
