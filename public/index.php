@@ -59,6 +59,3 @@ echo isset($_SERVER['PATH_INFO'])? "Link bạn đang truy cập: ".$_SERVER['PAT
 }
 */
 
-//echo "Thời gian load", memory_get_usage();
-
-

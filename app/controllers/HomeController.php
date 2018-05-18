@@ -1,7 +1,6 @@
 <?php
-
+declare(strict_types=1);
 namespace app\controllers;
-
 use app\core\Controller;
 /**
 * HomeController
@@ -11,7 +10,7 @@ class HomeController extends Controller
 	
 	function __construct()
 	{
-		//print "đây là nội dung từ homecontroller Home Controller";
+		print "hello từ Home Controller";
 	}
 
 	public function index()
