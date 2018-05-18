@@ -6,8 +6,7 @@
 		echo '<h2> hello from @home router home GET </h2>';
 	});
 
-
-	Router::get('/abc','HomeController@index');
+	Router::get('/test','HomeController@hello');
 	
 	/*Router::get('/',function(){
 		$ct = new Controller;
