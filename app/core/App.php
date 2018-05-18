@@ -21,8 +21,10 @@ require(__DIR__.'/Autoload.php');
 class App
 {
 	private $router;
+	private static $config;
+	private static $controller;
+	private static $action;
 
-	public static $config;
 
 	function __construct()
 	{
@@ -54,6 +56,27 @@ class App
 	{
 		return self::$config;
 	}
+
+	public static function setController($controller)
+	{
+		self::$controller = $controller;
+	}
+
+	public static function getController()
+	{
+		return self::$controller;
+	}
+
+	public static function setAction($action)
+	{
+		self::$action = $action;
+	}
+
+	public static function getAction()
+	{
+		return self::$action;
+	}
+
 
 	public function dispatch()
 	{
