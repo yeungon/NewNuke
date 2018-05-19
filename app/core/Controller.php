@@ -1,6 +1,7 @@
 <?php
 
 namespace app\core;
+use \App;
 /**
 * Core Controller - All "children" controllers need to extend this "mother" controller to use the following functions
 */
