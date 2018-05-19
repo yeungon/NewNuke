@@ -139,8 +139,8 @@ class Router
 				if ($checkRoute === true ){
 					if (is_callable($action) ){
 						call_user_func_array($action, $params);
-					} elseif ( is_string($action) ){
-						$this->compieRoute($action,$params);
+					} elseif (is_string($action)){
+						$this->compileRoute($action,$params);
 					}
 					return;
 				} else {
