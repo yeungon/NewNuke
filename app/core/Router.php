@@ -165,19 +165,23 @@ class Router
 
 		if (class_exists($classnamespace)) {
 			
+			App::setController($className);
+
 			/**class exists, then create a new object*/
 			$object = new $classnamespace;
-
+	
 			if (method_exists($classnamespace, $methodName)){
 
+				App::setAction($methodName);
 				/*call the method using the $params*/
 				call_user_func_array([$object, $methodName], $params);
-			}else{
+
+			} else {
 
 				die("Method $methodName not found");
 			}
 			
-		}else{
+		} else {
 
 			die("Class $classnamespace not found");
 		}
