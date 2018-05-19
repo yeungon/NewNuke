@@ -11,7 +11,7 @@ class HomeController extends Controller
 	
 	function __construct()
 	{
-		//print "đây là nội dung từ homecontroller Home Controller";
+		print "hello từ Home Controller";
 	}
 
 	public function index()
