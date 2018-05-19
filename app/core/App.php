@@ -55,7 +55,7 @@ class App
 		return self::$config;
 	}
 
-	public function run()
+	public function dispatch()
 	{
 		//hàm run() của Router.php
 		$this->router->run();
