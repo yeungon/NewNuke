@@ -1,10 +1,12 @@
 <?php
 
 namespace app\controllers;
+
+use app\core\Controller;
 /**
 * HomeController
 */
-class HomeController
+class HomeController extends Controller
 {
 	
 	function __construct()
