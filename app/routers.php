@@ -20,6 +20,11 @@
 
 
 	Router::any('*',function(){
-		echo '404';
+		echo '404 responding code ! Sorry! The URL you are looking for is not available! ';
+		
+		//echo $this->basePath;
+		//header("Location: /index.php");
+
+		//print_r($this->defaultlFileLoad());
 	});
 ?>
