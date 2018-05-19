@@ -67,28 +67,29 @@ class Router
 	private function getRequestMethod()
 	{
 		$method = $url = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD']: 'GET';
+
 		return $method;
 
 	}
 	
-	private function addRoute($method, $url, $action)
+	private static function addRoute($method, $url, $action)
 	{
-		$this->routers[] = [$method, $url, $action];
+		self::$routers[] = [$method, $url, $action];
 	}
 
-	public function get($url, $action)
+	public static function get($url, $action)
 	{
-		$this->addRoute('GET', $url, $action);
+		self::addRoute('GET', $url, $action);
 	}
 
-	public function post($url, $action)
+	public static function post($url, $action)
 	{
-		$this->addRoute('POST', $url, $action);	
+		self::addRoute('POST', $url, $action);	
 	}
 
-	public function any($url, $action)
+	public static function any($url, $action)
 	{
-		$this->addRoute('GET|POST', $url, $action);
+		self::addRoute('GET|POST', $url, $action);
 
 	}
 
