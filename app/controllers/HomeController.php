@@ -11,13 +11,23 @@ class HomeController extends Controller
 	
 	function __construct()
 	{
-		//print "hello từ Home Controller";
+		/**
+		* Using the __construct from the core\Controller;
+		* parent::__construct() overrides the __construct() 
+		* in the extended 
+		* HomeController
+		*/
+		parent::__construct();
 	}
 
 	public function index()
 	{
 		
-		$this->render('index');
+		$this->render('index', [
+
+			"a" => "Vượng",
+			"b" => "Nguyễn",
+		]);
 		
 	}
 
