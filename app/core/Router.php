@@ -150,7 +150,7 @@ class Router
 			return;
 		}
 	
-	private function compieRoute($action, $params){
+	private function compileRoute($action, $params){
 
 		/*split the string HomeController@index*/
 		if(count(explode("@", $action)) !== 2){
