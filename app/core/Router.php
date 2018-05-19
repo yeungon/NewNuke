@@ -100,10 +100,11 @@ class Router
 
 			$requestURL = $this->getRequestURL();
 			$requestMethod = $this->getRequestMethod();
-			$routers = $this->routers;
+
+			$routers = self::$routers;
 			
-			foreach ($routers as $route ){
-				[$method,$url,$action] = $route;
+			foreach ($routers as $route){
+				[$method, $url, $action] = $route;
 
 				if (strpos($method, $requestMethod) === FALSE ){
 					continue;
