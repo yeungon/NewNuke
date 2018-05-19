@@ -7,7 +7,7 @@
 	});
 
 
-	Router::get('/abce','HomeController@hello');
+	Router::get('/abc','HomeController@index');
 	
 	/*Router::get('/',function(){
 		$ct = new Controller;
