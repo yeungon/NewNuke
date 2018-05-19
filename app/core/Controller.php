@@ -21,11 +21,30 @@ class Controller
 		}
 	}
 
-	public function render($view, $data)
-	{
-		/*if (condition) {
-			# code...
-		}*/
+	public function render($view, $data = null)
+	{ 
+		$controller = \App::getController();
+		
+		/*get the folder of the view*/
+		$folderView = strtolower(str_replace('Controller', '', $controller));
+
+		$rootDir = App::getConfig()[
+			'rootDir'];
+
+		$viewPath = $rootDir.'/app/views/'.$folderView.'/'.$view.'.php';
+
+		if (file_exists($viewPath)) {
+			require($viewPath);
+		}
+
+		//print_r($rootDir);
+
+		//App::getAction();
+
+		
+
+		//echo $folderView;
+		
 	}
 
 	public function renderPartial()
