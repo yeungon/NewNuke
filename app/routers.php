@@ -15,7 +15,7 @@
 	});*/
 
 	Router::get('/',function(){
-		echo '<h1> hello đây index</h1>';
+		echo '<h2> hello world from vietfony framework</h2>';
 	});
 
 
