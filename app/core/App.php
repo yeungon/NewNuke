@@ -1,16 +1,19 @@
 <?php
 declare(strict_types=1);
-namespace app\core\VietPhp;
+//namespace App\Core;
+require(__DIR__.'/Autoload.php');  
+
 
 //require_once(__DIR__.'/Router.php');
 /**
 * if you dont want to automatically load the file using composer, then try require (file) as follows :-)
 */
-require_once(__DIR__.'/../controllers/HomeController.php');
+//require_once(__DIR__.'/../controllers/HomeController.php');
 
 
-use app\core\Router;
-use app\controllers;
+
+//use app\core\Router;
+//use app\controllers;
 /**
 * App 
 * The core system
