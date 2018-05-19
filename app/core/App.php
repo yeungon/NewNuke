@@ -21,8 +21,10 @@ require(__DIR__.'/Autoload.php');
 class App
 {
 	private $router;
+	private static $config;
+	private static $controller;
+	private static $action;
 
-	public static $config;
 
 	function __construct()
 	{
