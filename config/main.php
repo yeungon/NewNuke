@@ -1,7 +1,7 @@
 <?php
 
 return[
-	'basePath' => '/vietphpdev/public',
+	'basePath' => '/vietphp/public',
 	/*thư mục gốc, dirname lồng nhau*/
 	'rootDir' => dirname(__DIR__),
 
