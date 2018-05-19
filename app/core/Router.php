@@ -3,39 +3,57 @@
 * Router
 */
 declare(strict_types=1);
-namespace app\core\Router;
+//namespace App\Core;
+
+
 
 class Router
 {
 	/**
 	* Array contains the routes
-	* @var array
+	* @var static array
+	* @see https://www.youtube.com/watch?v=6reEBParHzQ
 	*/
-	private $routers = [];
+	private static $routers = [];
+	
+	/**
+	* @var string containning the basePath
+	*/
+	private $basePath;
 
-	function __construct()
+	function __construct($basePath)
 	{
-		# code...
+		$this->basePath = $basePath;
 	}
 
 	/**
-	*@param void
-	*@return REQUEST_URI from the gobal constant $_REQUEST. "/" if isset is NULL
+	* @param void
+	* @return REQUEST_URI from the gobal constant $_REQUEST. 
+	* "/" if isset is NULL
 	*/
 	private function getRequestURL()
 	{
-		/**/
-		$basePath = \app\core\VietPhp\App::getConfig()['basePath'];
-
+		
 		$url = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI']: '/';
+
+		
 				
 		/*remove the initial part of the url*/
-		$url = str_replace($basePath, '', $url);
-
-		/** check the url 
-		* if empty => return '/' ORTHERWISE, RETURN $url
-		*/
+		$url = str_replace($this->basePath, '', $url);
 		
+		/**
+		* Remove the slash "/" in the right, then /abc/ ==> /abc
+		* @see https://3v4l.org/7jhrv
+		*/
+			
+		$url = $url[-1] === "/"? substr($url, 0, -1): $url; 
+		
+		
+		/** 
+		* Check the url 
+		* If empty => return '/' ORTHERWISE, RETURN $url
+		*/
+				
 		$url = $url === '' || empty($url)? '/': $url;
 
 		return $url;
