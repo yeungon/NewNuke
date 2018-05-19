@@ -160,21 +160,22 @@ class Router
 
 		$className = explode('@', $action)[0];
 		$methodName = explode('@', $action)[1];
+		
 		$classnamespace = 'app\\controllers\\'.$className; 
 
 		if (class_exists($classnamespace)) {
-			/**then class exists, then create a new object*/
-
+			
+			/**class exists, then create a new object*/
 			$object = new $classnamespace;
 
 			if (method_exists($classnamespace, $methodName)){
+
 				/*call the method using the $params*/
 				call_user_func_array([$object, $methodName], $params);
 			}else{
 
 				die("Method $methodName not found");
 			}
-
 			
 		}else{
 
