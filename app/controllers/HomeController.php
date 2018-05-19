@@ -1,10 +1,12 @@
 <?php
 
 namespace app\controllers;
+
+use app\core\Controller;
 /**
 * HomeController
 */
-class HomeController
+class HomeController extends Controller
 {
 	
 	function __construct()
@@ -12,8 +14,20 @@ class HomeController
 		//print "đây là nội dung từ homecontroller Home Controller";
 	}
 
-	public function index($abc, $cde)
+	public function index()
 	{
-		echo "đây là nội dung từ home index, với tham số $abc và $cde";
+		
+		//$this->redirect("http://google.com");
+		echo "Đây là index Controller Home Controller";
+		//$this->render('index');
+	}
+
+
+	public function hello()
+	{
+		
+		//$this->redirect("http://google.com");
+		echo "Đây là hàm hello Controller Home Controller";
+		//$this->render('index');
 	}
 }

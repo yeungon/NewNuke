@@ -1,16 +1,19 @@
 <?php
 declare(strict_types=1);
-namespace app\core\VietPhp;
+//namespace App\Core;
+require(__DIR__.'/Autoload.php');  
+
 
 //require_once(__DIR__.'/Router.php');
 /**
 * if you dont want to automatically load the file using composer, then try require (file) as follows :-)
 */
-require_once(__DIR__.'/../controllers/HomeController.php');
+//require_once(__DIR__.'/../controllers/HomeController.php');
 
 
-use app\core\Router;
-use app\controllers;
+
+//use app\core\Router;
+//use app\controllers;
 /**
 * App 
 * The core system
@@ -30,48 +33,10 @@ class App
 		/*sẽ được khởi tạo từ trong Router.php*/
 		//new \app\controllers\HomeController;
 
-		$this->router = new \app\core\Router\Router;
-		
-		$this->router->get('/{abc}/{cde}', 'HomeController@index');
+		/*khởi tạo Autoload*/
+		new \Autoload(self::$config['rootDir']);
 
-
-		$this->router->get('/abc', function (){
-
-			echo "nội dung từ trang abc";
-
-		});
-
-
-
-		$this->router->post('/test', function (){
-
-			echo "đây là trang test";
-
-		});
-
-		$this->router->any('/post/{category}/{id}/{bac}', function ($arg1, $arg2, $arg3){
-
-			echo "đây là trang post và có các paramater $arg1, và $arg2 và $arg3";
-
-		});
-
-		$this->router->any('/news/{abc}/{abc}', function ($arg1, $arg2){
-
-			echo "đây là trang $arg1, và $arg2";
-
-		});
-
-		$this->router->any('/admin', function (){
-
-			echo "Hello @admin đây là trang admin.";
-
-		});
-
-		/*catch lỗi*/;
-		$this->router->any("*", function(){
-			echo "400 not found";
-		});
-
+		$this->router = new Router(self::$config['basePath']);
 	}
 
 	/**
@@ -90,7 +55,7 @@ class App
 		return self::$config;
 	}
 
-	public function run()
+	public function dispatch()
 	{
 		//hàm run() của Router.php
 		$this->router->run();
