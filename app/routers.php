@@ -6,15 +6,17 @@
 		echo '<h2> hello from @home router home GET </h2>';
 	});
 
-	Router::get('/home','HomeController@index');
+	Router::get('/','HomeController@index');
 	
 	/*Router::get('/',function(){
 		$ct = new Controller;
 		$ct->render('index',['age' => 22, 'name' => 'tai']);
 	});*/
 
-	Router::get('/',function(){
-		echo '<h2> hello world from vietfony framework</h2>';
+	Router::get('/home',function(){
+		
+
+		echo '<h4> Hi, you are going to access to the homepage of newnuke/vietfony framework</h4>';
 	});
 
 
