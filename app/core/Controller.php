@@ -91,8 +91,30 @@ class Controller
 	}
 	
 
-	public function renderPartial()
+	public function renderPartial($view, $data)
 	{
 		
+		$rootDir = \App::getConfig()['rootDir'];
+
+		/* Extract array and turn $key in array into $variable that can be directly echoed in view.
+		* Note: the third parameter "data" is used IN CASE the $key name HAS BEEN ALREADY USED in the previous variables
+		* @see http://php.net/manual/en/function.extract.php
+		*/
+		if (is_array($data)){
+			extract($data, EXTR_PREFIX_SAME, "data");
+		} else {
+			$data = $data;
+		}
+
+		$viewPath = $rootDir.'/app/views/'.$view.'.php';
+
+		if (file_exists($viewPath)) {
+			//ob_start();
+			
+			require($viewPath);
+		
+			//return ob_get_clean();
+		}
+
 	}
 }
