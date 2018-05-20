@@ -1,17 +1,21 @@
 <?php
 /**
-* Router
+* A simple class to handle rounting function in PHP. 
+* @link a much more robust and widely used package handling routing stuffs in PHP here https://github.com/nikic/FastRoute. SlimFramework && Laravel use this one. The behind the scene here is the combination of REGEX as it is elaborated here http://nikic.github.io/2014/02/18/Fast-request-routing-using-regular-expressions.html
+* @see the reference from Tài "tốt tính" videos at https://www.youtube.com/watch?v=6QD3Mvqs09E&list=PL4m3Y7pzfrGmG7DEQ4lBaIW8mE6oivnCS&index=13
+* @link another routing package https://github.com/c9s/Pux
+* @link another standard package http://route.thephpleague.com/
+* @author Vuong Nguyen
+* @since 10th May 2018
 */
 declare(strict_types=1);
 //namespace App\Core;
 
 
-
 class Router
 {
 	/**
-	* Array contains the routes
-	* @var static array
+	* @var static variable array
 	* @see https://www.youtube.com/watch?v=6reEBParHzQ
 	*/
 	private static $routers = [];
@@ -51,7 +55,7 @@ class Router
 		
 		/** 
 		* Check the url 
-		* If empty => return '/' ORTHERWISE, RETURN $url
+		* If empty => return '/' OTHERWISE, RETURN $url
 		*/
 				
 		$url = $url === '' || empty($url)? '/': $url;
@@ -66,12 +70,16 @@ class Router
 	*/
 	private function getRequestMethod()
 	{
-		$method = $url = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD']: 'GET';
+		$httpMethod = $url = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD']: 'GET';
 
-		return $method;
+		return $httpMethod;
 
 	}
-	
+	/**
+	* @param string $method
+	* @param string $url
+	* @return array self::$routers[]
+	*/
 	private static function addRoute($method, $url, $action)
 	{
 		self::$routers[] = [$method, $url, $action];
@@ -191,16 +199,6 @@ class Router
 
 	public function run()
 	{
-		//$url = $this->getRequestURL();
-
-		//echo $url;
-
-		//$method = $this->getRequestMethod();
-		/*echo $method;
-
-		echo "<pre>";
-		print_r($this->routers);*/
-
 		$this->match();
 	}
 }

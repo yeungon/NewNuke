@@ -53,7 +53,7 @@ class Controller
 		}
 	}
 
-	public function getViewContent($view, $data)
+	public function getViewContent($view, $data = null)
 	{
 		$controller = \App::getController();
 		
@@ -91,7 +91,7 @@ class Controller
 	}
 	
 
-	public function renderPartial($view, $data)
+	public function renderPartial($view, $data =null)
 	{
 		
 		$rootDir = \App::getConfig()['rootDir'];

@@ -13,7 +13,7 @@ require(__DIR__.'/Autoload.php');
 
 
 //use app\core\Router;
-//use app\controllers;
+use app\core\Registry;
 /**
 * App 
 * The core system
@@ -35,10 +35,24 @@ class App
 		/*sẽ được khởi tạo từ trong Router.php*/
 		//new \app\controllers\HomeController;
 
+
 		/*khởi tạo Autoload*/
 		new \Autoload(self::$config['rootDir']);
 
+		
 		$this->router = new Router(self::$config['basePath']);
+
+		
+
+		//print_r(get_class_methods($a));
+
+		//echo \Registry::getInstance()->name;
+		//$a->name = "Vuong";
+		//echo $a->name;
+
+		//$registry_config = \Registry::getInstance();
+
+		//echo $registry_config;
 	}
 
 	/**
