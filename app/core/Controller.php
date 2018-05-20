@@ -2,15 +2,22 @@
 
 namespace app\core;
 use \App;
+
 /**
 * Core Controller - All "children" controllers need to extend this "mother" controller to use the following functions
 */
 class Controller
 {
-	
+	private $layout = null;
 	public function __construct()
 	{
+		$this->layout = App::getConfig()['layout'];
 		
+	}
+
+	public function setLayout($layout)
+	{
+		$this->layout = $layout;
 	}
 
 	public function redirect($url, $isEnd = true, $resPonseCode = 302)
