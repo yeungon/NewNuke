@@ -1,12 +1,16 @@
 <?php
-	//use app\core\Controller;
-
+	use app\core\Controller;
 	
-	Router::get('/test',function(){
-		echo '<h2> hello from @home router home GET </h2>';
+	Router::get('/',function(){
+		
+		/*Render the index*/
+
+		$ct = new Controller;
+		$ct->render('news\index');
+
 	});
 
-	Router::get('/','HomeController@index');
+	Router::get('/abc','HomeController@index');
 	
 	/*Router::get('/',function(){
 		$ct = new Controller;
