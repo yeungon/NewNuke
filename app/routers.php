@@ -15,7 +15,7 @@
 		/*Render the index*/
 
 		$ct = new Controller;
-		$ct->render('news\index');
+		$ct->render('mainindex', ["name" => "Vượng", "age" => '35']);
 
 	});
 
