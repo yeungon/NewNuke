@@ -1,10 +1,12 @@
 <?php
 /**
 * A simple class to handle rounting function in PHP. 
-* @see a much more robust and widely used package handling routing stuffs in PHP here https://github.com/nikic/FastRoute. SlimFramework && Laravel use this one.
+* @link a much more robust and widely used package handling routing stuffs in PHP here https://github.com/nikic/FastRoute. SlimFramework && Laravel use this one. The behind the scene here is the combination of REGEX as it is elaborated here http://nikic.github.io/2014/02/18/Fast-request-routing-using-regular-expressions.html
 * @see the reference from Tài "tốt tính" videos at https://www.youtube.com/watch?v=6QD3Mvqs09E&list=PL4m3Y7pzfrGmG7DEQ4lBaIW8mE6oivnCS&index=13
-* @see another routing package https://github.com/c9s/Pux
+* @link another routing package https://github.com/c9s/Pux
+* @link another standard package http://route.thephpleague.com/
 * @author Vuong Nguyen
+* @since 10th May 2018
 */
 declare(strict_types=1);
 //namespace App\Core;
