@@ -193,16 +193,6 @@ class Router
 
 	public function run()
 	{
-		//$url = $this->getRequestURL();
-
-		//echo $url;
-
-		//$method = $this->getRequestMethod();
-		/*echo $method;
-
-		echo "<pre>";
-		print_r($this->routers);*/
-
 		$this->match();
 	}
 }
