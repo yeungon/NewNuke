@@ -13,7 +13,7 @@ require(__DIR__.'/Autoload.php');
 
 
 //use app\core\Router;
-//use app\controllers;
+use app\core\Registry;
 /**
 * App 
 * The core system
