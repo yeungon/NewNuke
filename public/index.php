@@ -35,7 +35,7 @@
 */
 	
 
-
+//print_r(get_declared_classes());
 
 /*
 echo isset($_SERVER['PATH_INFO'])? "Link bạn đang truy cập: ".$_SERVER['PATH_INFO']: "";
