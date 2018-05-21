@@ -1,17 +1,19 @@
 <?php
 /**
-* Router
+* A simple class to handle rounting function in PHP. 
+* @see a much more robust and widely used package handling routing stuffs in PHP here https://github.com/nikic/FastRoute. SlimFramework && Laravel use this one.
+* @see the reference from Tài "tốt tính" videos at https://www.youtube.com/watch?v=6QD3Mvqs09E&list=PL4m3Y7pzfrGmG7DEQ4lBaIW8mE6oivnCS&index=13
+* @see another routing package https://github.com/c9s/Pux
+* @author Vuong Nguyen
 */
 declare(strict_types=1);
 //namespace App\Core;
 
 
-
 class Router
 {
 	/**
-	* Array contains the routes
-	* @var static array
+	* @var static variable array
 	* @see https://www.youtube.com/watch?v=6reEBParHzQ
 	*/
 	private static $routers = [];
