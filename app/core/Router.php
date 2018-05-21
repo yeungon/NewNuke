@@ -70,12 +70,16 @@ class Router
 	*/
 	private function getRequestMethod()
 	{
-		$method = $url = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD']: 'GET';
+		$httpMethod = $url = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD']: 'GET';
 
-		return $method;
+		return $httpMethod;
 
 	}
-	
+	/**
+	* @param string $method
+	* @param string $url
+	* @return array self::$routers[]
+	*/
 	private static function addRoute($method, $url, $action)
 	{
 		self::$routers[] = [$method, $url, $action];
