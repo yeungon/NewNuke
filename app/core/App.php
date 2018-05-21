@@ -2,17 +2,13 @@
 declare(strict_types=1);
 //namespace App\Core;
 require(__DIR__.'/Autoload.php');  
-
-
 //require_once(__DIR__.'/Router.php');
 /**
 * if you dont want to automatically load the file using composer, then try require (file) as follows :-)
 */
 //require_once(__DIR__.'/../controllers/HomeController.php');
-
-
-
 //use app\core\Router;
+
 use app\core\Registry;
 /**
 * App 
@@ -24,7 +20,6 @@ class App
 	private static $config;
 	private static $controller;
 	private static $action;
-
 
 	function __construct()
 	{
@@ -39,14 +34,14 @@ class App
 		/*khởi tạo Autoload*/
 		new \Autoload(self::$config['rootDir']);
 
-		
+
 		$this->router = new Router(self::$config['basePath']);
 
-		
+		$registry_config = Registry::getInstance()->config = "Thử config";
 
-		//print_r(get_class_methods($a));
+		echo $registry_config;
 
-		//echo \Registry::getInstance()->name;
+		 //echo \Registry::getInstance()->ten;
 		//$a->name = "Vuong";
 		//echo $a->name;
 

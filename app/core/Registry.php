@@ -5,7 +5,7 @@
 * @see https://www.youtube.com/watch?v=6f94vdhS3Hs&list=PL4m3Y7pzfrGmG7DEQ4lBaIW8mE6oivnCS&index=14
 * @example https://3v4l.org/stN5G
 */
-namespace core\app;
+namespace app\core;
 class Registry
 {
 	
@@ -15,7 +15,7 @@ class Registry
 	private $storage;
 
 	/** 
-	* Set the __construct() to private to prevent initiate new object using new keyword such as "new Registry"
+	* Set the __construct() to private to prevent initiating new object using "new" keyword such as "new Registry"
 	*/
 	private function __construct()
 	{
@@ -37,6 +37,7 @@ class Registry
 	/**
 	* @param string $name and $value that will be used to set the values for the instance
 	* @return the value of the instance
+	* __set is a magic method that can automatically set the value
 	*/
 	public function __set($name, $value)
 	{

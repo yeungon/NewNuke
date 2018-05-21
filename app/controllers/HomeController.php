@@ -32,11 +32,18 @@ class HomeController extends Controller
 	}
 
 
-	public function hello()
+	public function hello($abc)
 	{
 		
+
 		//$this->redirect("http://google.com");
 		echo "Đây là hàm hello Controller Home Controller";
 		//$this->render('index');
+
+		$this->render('index', [
+
+			"a" => "Vượng",
+			"b" => "Nguyễn",
+		]);
 	}
 }

@@ -38,7 +38,7 @@ class Autoload{
 			}
 			else{
 				//throw new AppException("$class does not exsits")
-				die("$class does not exit");
+				die("Call $class does not exit");
 				//echo "lỗi rồi";
 			}
 				
