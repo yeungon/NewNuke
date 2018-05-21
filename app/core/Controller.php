@@ -53,7 +53,7 @@ class Controller
 		}
 	}
 
-	public function getViewContent($view, $data)
+	public function getViewContent($view, $data = null)
 	{
 		$controller = \App::getController();
 		
