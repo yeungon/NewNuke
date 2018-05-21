@@ -53,7 +53,7 @@ class Router
 		
 		/** 
 		* Check the url 
-		* If empty => return '/' ORTHERWISE, RETURN $url
+		* If empty => return '/' OTHERWISE, RETURN $url
 		*/
 				
 		$url = $url === '' || empty($url)? '/': $url;
