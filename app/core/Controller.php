@@ -91,7 +91,7 @@ class Controller
 	}
 	
 
-	public function renderPartial($view, $data)
+	public function renderPartial($view, $data =null)
 	{
 		
 		$rootDir = \App::getConfig()['rootDir'];
