@@ -34,14 +34,14 @@ class App
 		/*khởi tạo Autoload*/
 		new \Autoload(self::$config['rootDir']);
 
-		
+
 		$this->router = new Router(self::$config['basePath']);
 
-		
+		$registry_config = Registry::getInstance()->config = "Thử config";
 
-		//print_r(get_class_methods($a));
+		echo $registry_config;
 
-		//echo \Registry::getInstance()->name;
+		 //echo \Registry::getInstance()->ten;
 		//$a->name = "Vuong";
 		//echo $a->name;
 
