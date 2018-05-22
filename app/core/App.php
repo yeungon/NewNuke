@@ -21,7 +21,6 @@ class App
 	private static $controller;
 	private static $action;
 
-
 	function __construct()
 	{
 		/**
