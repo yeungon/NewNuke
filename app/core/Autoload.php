@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+use app\core\AppException;
 
 class Autoload{
 		/**
