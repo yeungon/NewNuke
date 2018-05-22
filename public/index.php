@@ -8,6 +8,8 @@
 	* @see https://www.udemy.com/php-mvc-from-scratch/learn/v4/content (English, paid course)
 	* @see discussion here https://news.ycombinator.com/item?id=16725492 and 
 	* @see initial introduction here https://kevinsmith.io/modern-php-without-a-framework
+	* @see the link and its second part at https://medium.com/shecodeafrica/building-your-own-custom-php-framework-part-1-1d24223bab18
+	* @see some introductions from the creator of Symfony https://symfony.com/doc/current/create_framework/index.html
 	* @create 15 May 2018
 	*/
 
