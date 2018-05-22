@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Newnuke Framework</title>
-	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="http://localhost/vietphp/public/assets/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
 
