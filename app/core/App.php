@@ -31,9 +31,8 @@ class App
 		//new \app\controllers\HomeController;
 
 
-		/*khởi tạo Autoload*/
+		/*automatically trigger the autoload setup at app\core\Autoload.php*/
 		new \Autoload(self::$config['rootDir']);
-
 
 		$this->router = new Router(self::$config['basePath']);
 
