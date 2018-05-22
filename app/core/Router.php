@@ -188,12 +188,13 @@ class Router
 
 			} else {
 
-				die("Method $methodName not found");
+				throw new AppException("Method $methodName not found");
+				
 			}
 			
 		} else {
-
-			die("Class $classnamespace not found");
+			throw new AppException("Class $classnamespace not found");
+			
 		}
 
 
