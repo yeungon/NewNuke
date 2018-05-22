@@ -15,7 +15,7 @@ class Registry
 	private $storage;
 
 	/** 
-	* Set the __construct() to private to prevent initiate new object using new keyword such as "new Registry"
+	* Set the __construct() to private to prevent initiating new object using "new" keyword such as "new Registry"
 	*/
 	private function __construct()
 	{
