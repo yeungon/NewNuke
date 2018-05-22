@@ -12,7 +12,7 @@
 	* @see initial introduction here https://kevinsmith.io/modern-php-without-a-framework
 	* @see the link and its second part at https://medium.com/shecodeafrica/building-your-own-custom-php-framework-part-1-1d24223bab18
 	* @see some introductions from the creator of Symfony https://symfony.com/doc/current/create_framework/index.html
-	* @create 15 May 2018
+	* @since 15 May 2018
 	*/
 
 	require(__DIR__.'/../app/core/App.php');
