@@ -37,6 +37,7 @@ class Registry
 	/**
 	* @param string $name and $value that will be used to set the values for the instance
 	* @return the value of the instance
+	* __set is a magic method that can automatically set the value
 	*/
 	public function __set($name, $value)
 	{
