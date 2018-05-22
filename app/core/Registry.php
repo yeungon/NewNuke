@@ -5,7 +5,7 @@
 * @see https://www.youtube.com/watch?v=6f94vdhS3Hs&list=PL4m3Y7pzfrGmG7DEQ4lBaIW8mE6oivnCS&index=14
 * @example https://3v4l.org/stN5G
 */
-namespace core\app;
+namespace app\core;
 class Registry
 {
 	
