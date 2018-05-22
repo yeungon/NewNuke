@@ -12,6 +12,7 @@
 declare(strict_types=1);
 //namespace App\Core;
 
+use app\core\AppException;
 
 class Router
 {
