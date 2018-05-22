@@ -20,7 +20,10 @@
 	/*Global variable*/	
 	$config = require_once dirname(__DIR__) . '/./config/main.php';
 
-	/*Setting up the configuration in the config\main.php*/
+	/*
+	* Trigger the configuration in the config\main.php
+	* App is the class can be found in the app\core\app.com. The file and the classname are both automatically loaded.
+	*/
 	App::setConfig($config);
 
 	/**
