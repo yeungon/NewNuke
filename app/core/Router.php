@@ -5,6 +5,7 @@
 * @see the reference from Tài "tốt tính" videos at https://www.youtube.com/watch?v=6QD3Mvqs09E&list=PL4m3Y7pzfrGmG7DEQ4lBaIW8mE6oivnCS&index=13
 * @link another routing package https://github.com/c9s/Pux
 * @link another standard package http://route.thephpleague.com/
+* @link a very long discussion about routing https://github.com/symfony/symfony/pull/21926
 * @author Vuong Nguyen
 * @since 10th May 2018
 */
