@@ -19,14 +19,17 @@
 
 	});
 
-	Router::get('/abc','HomeController@index');
+	Router::get('/home','HomeController@index');
+
+
+	Router::get('/home/hello/{test}','HomeController@hello');
 	
 	/*Router::get('/',function(){
 		$ct = new Controller;
 		$ct->render('index',['age' => 22, 'name' => 'tai']);
 	});*/
 
-	Router::get('/home',function(){
+	Router::get('/abc',function(){
 		
 
 		echo '<h4> Hi, you are going to access to the homepage of newnuke/vietfony framework</h4>';
