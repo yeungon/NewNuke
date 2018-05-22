@@ -1,7 +1,9 @@
 <?php
 	declare(strict_types=1);
 	/**
-	* New Nuke is a PHP Framework originally created as an experience while I was dealing with a bundle of new interesting features released in * PHP 7 and while I was preparing materials for taking the Zend Certifield Engineer test. A heap of thanks should go to "Tài tốt tính" for * his tutorial
+	* New Nuke is a PHP Framework originally created as an experience while I was dealing with a bundle of new interesting features 
+	* released in * PHP 7 and while I was preparing materials for taking the Zend Certifield Engineer test. \
+	* A heap of thanks should go to "Tài tốt tính" for his tutorial
 	* @author Vuong Nguyen me@vuongnguyen.net
 	* @license MIT
 	* @see https://www.youtube.com/playlist?list=PL4m3Y7pzfrGmG7DEQ4lBaIW8mE6oivnCS (Vietnamese, free tutorial)
