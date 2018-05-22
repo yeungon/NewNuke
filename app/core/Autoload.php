@@ -38,8 +38,8 @@ class Autoload{
 				require_once ($filePath);
 			}
 			else{
-				//throw new AppException("$class does not exsits")
-				die("Call $class does not exit");
+				throw new AppException("$class does not exsits");
+				//die("Call $class does not exit");
 				//echo "lỗi rồi";
 			}
 				
