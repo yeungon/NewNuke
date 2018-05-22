@@ -88,7 +88,7 @@ class App
 
 	public function dispatch()
 	{
-		//hàm run() của Router.php
+		//trigger the run() function from Router.php
 		$this->router->run();
 	}
 
