@@ -38,6 +38,8 @@
 
 	Router::any('*',function(){
 		echo '404 responding code ! Sorry! The URL you are looking for is not available! ';
+
+		//header("Location:public/");
 		
 		//echo $this->basePath;
 		//header("Location: /index.php");
