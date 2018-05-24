@@ -12,6 +12,7 @@
 declare(strict_types=1);
 //namespace App\Core;
 
+use app\core\AppException;
 
 class Router
 {
@@ -187,12 +188,13 @@ class Router
 
 			} else {
 
-				die("Method $methodName not found");
+				throw new AppException("Method $methodName not found");
+				
 			}
 			
 		} else {
-
-			die("Class $classnamespace not found");
+			throw new AppException("Class $classnamespace not found");
+			
 		}
 
 

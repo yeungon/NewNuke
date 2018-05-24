@@ -64,7 +64,7 @@ class Controller
 		$rootDir = \App::getConfig()['rootDir'];
 
 		/**
-		* Extract array and turn $key in array into $variable that can be directly echoed in view.
+		* Extract array and turn $key in array into $variable that can be directly printed (the $value) in view template.
 		* Note: the third parameter "data" is used IN CASE the $key name HAS BEEN ALREADY USED in the previous variables
 		* @see http://php.net/manual/en/function.extract.php
 		*/
