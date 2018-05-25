@@ -24,11 +24,7 @@
 
 	Router::get('/home/hello/{test}','HomeController@hello');
 	
-	/*Router::get('/',function(){
-		$ct = new Controller;
-		$ct->render('index',['age' => 22, 'name' => 'tai']);
-	});*/
-
+	
 	Router::get('/abc',function(){
 		
 
