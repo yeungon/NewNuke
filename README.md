@@ -4,7 +4,7 @@ NewNuKe is a learning by creating project aims to utilize the up to date PHP 7 f
 
 # References
 
-/**
+
 	* New Nuke is a leanring-by-creating project which is a PHP Framework originally created as an experience
 	* while I was dealing with a  bundle of new interesting features released in PHP 7 && 
 	* and while I was preparing materials for taking the Zend Certifield Engineer test even though I have already had some experiences with modern MVC framework such as Codeigniter and Laravel.
