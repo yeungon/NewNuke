@@ -6,6 +6,8 @@
 * @link another routing package https://github.com/c9s/Pux
 * @link another standard package http://route.thephpleague.com/
 * @link a very long discussion about routing https://github.com/symfony/symfony/pull/21926
+* @see another Routing option http://altorouter.com/
+* @see Route and Dispatch https://stackoverflow.com/questions/11700603/what-is-the-difference-between-url-router-and-dispatcher?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 * @author Vuong Nguyen
 * @since 10th May 2018
 */
