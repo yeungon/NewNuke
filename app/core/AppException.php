@@ -13,6 +13,7 @@
 			* @see https://www.w3schools.com/php/php_exception.asp
 			*/
 			set_exception_handler([$this,'error_handle']);
+			
 			parent::__construct($message,$code);
 		}
 
