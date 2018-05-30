@@ -6,7 +6,7 @@ NewNuKe is a learning by creating project aims to utilize the up to date PHP 7 f
 
 NewNuke was born in New Zealand, as you can see in the name why it is. Here are some of the notable features that can help you have a glimpse about it.
 
-- MVC design pattern, module based structure.
+- MVC application architecture, module based structure.
 - Singeton, Registry, Dependecy Injection design patterns.
 
 # References
